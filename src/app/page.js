@@ -1,101 +1,269 @@
+"use client";
+import { useEffect } from "react";
 import Image from "next/image";
+import styles from "./page.module.css";
+import "./globals.scss";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  useEffect(() => {}, []);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  function playMusic() {
+    const audio = document.querySelector("#backgroundMusic");
+    audio.play();
+    console.log(audio, "22222");
+  }
+
+  function hoverNo() {
+    console.log("1111");
+    const element = document.querySelector("#no");
+    const hohoho = document.querySelector("#hohoho");
+    if (!element) return;
+    hohoho.play();
+    const randomX = Math.random() * 100;
+    const randomY = Math.random() * 100;
+    element.style.left = `${randomX}%`;
+    element.style.top = `${randomY}%`;
+  }
+
+  function open() {
+    playMusic();
+    const envelope = document.querySelector("#envelope");
+    envelope.classList.add("open");
+    envelope.classList.remove("close");
+    envelope.classList.remove("envelope-hover");
+    const back = document.querySelector(".letter-background");
+    back.classList.add("open-background");
+  }
+
+  function renderLetter() {
+    return (
+      <div className="letter-background">
+        <div id="envelope" className="close envelope-hover" onClick={open}>
+          <div className="front flap"></div>
+          <div className="front pocket"></div>
+          <div className="letter">
+            <div className="words line1"></div>
+            <div className="words line2"></div>
+            <div className="words line3"></div>
+            <div className="words line4"></div>
+          </div>
+          <div className="tem">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/cheese.png"
+              width={38}
+              height={32}
+              alt="cheese"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    );
+  }
+
+  function renderInvitation() {
+    return (
+      <div className="invitation">
+        <div className="yes-background">
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+          <div className="snow"></div>
+        </div>
+        <div className="question">Bạn có thể cho tôi biết???</div>
+        <div className="answers">
+          <button id="yes" className="button">
+            <div>Yessssssssssssss</div>
+            <div className="tree">
+              <Image
+                src="/images/tree.png"
+                width={25}
+                height={28}
+                alt="snow-tree"
+              />
+              <Image
+                src="/images/tree.png"
+                width={32}
+                height={43}
+                alt="snow-tree"
+              />
+            </div>
+          </button>
+          <button id="no" className="no-button" onMouseEnter={hoverNo}>
+            <Image
+              src="/images/santa-hat.png"
+              width={383}
+              height={317}
+              alt="santa-hat"
+            />
+            <div>No</div>
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {renderLetter()}
+      <div className={"page"}>
+        <Image
+          src="/images/background.jpg"
+          width={2560}
+          height={1440}
+          alt="background"
+        />
+        <div className="main">{renderInvitation()}</div>
+        <div className="chrismax-tree"></div>
+        <div className="music">
+          <audio id="hohoho">
+            <source src="/audios/hohoho.mp3" type="audio/mpeg" />
+          </audio>
+          <audio id="backgroundMusic" controls autoPlay loop>
+            <source src="/audios/music.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+      </div>
+    </>
   );
 }
