@@ -1,20 +1,30 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import "./globals.scss";
 
+import cheese from "@/assets/images/cheese.png";
+import tree from "@/assets/images/tree.png";
+import hat from "@/assets/images/santa-hat.png";
+import background_img from "@/assets/images/background.jpg";
+import messageB from "@/assets/images/message-background.jpeg";
+
+import { MESS } from "./message.js";
+
 export default function Home() {
+  const [mess, setMess] = useState("");
+  const [currentMess, setCurrentMess] = useState("");
+  const [count, setCount] = useState(0);
+
   useEffect(() => {}, []);
 
   function playMusic() {
     const audio = document.querySelector("#backgroundMusic");
     audio.play();
-    console.log(audio, "22222");
   }
 
   function hoverNo() {
-    console.log("1111");
     const element = document.querySelector("#no");
     const hohoho = document.querySelector("#hohoho");
     if (!element) return;
@@ -48,194 +58,37 @@ export default function Home() {
             <div className="words line4"></div>
           </div>
           <div className="tem">
-            <Image
-              src="/images/cheese.png"
-              width={38}
-              height={32}
-              alt="cheese"
-            />
+            <Image src={cheese} width={38} height={32} alt="cheese" />
           </div>
         </div>
       </div>
     );
   }
 
+  function yes() {
+    const ele = document.querySelector(".modal");
+    ele.style.display = "flex";
+  }
+
   function renderInvitation() {
     return (
       <div className="invitation">
         <div className="yes-background">
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
-          <div className="snow"></div>
+          {Array.from(Array(200).keys()).map((key) => {
+            return <div key={key} className="snow"></div>;
+          })}
         </div>
         <div className="question">Bạn có thể cho tôi biết???</div>
         <div className="answers">
-          <button id="yes" className="button">
+          <button id="yes" className="button" onClick={yes}>
             <div>Yessssssssssssss</div>
             <div className="tree">
-              <Image
-                src="/images/tree.png"
-                width={25}
-                height={28}
-                alt="snow-tree"
-              />
-              <Image
-                src="/images/tree.png"
-                width={32}
-                height={43}
-                alt="snow-tree"
-              />
+              <Image src={tree} width={25} height={28} alt="snow-tree" />
+              <Image src={tree} width={32} height={43} alt="snow-tree" />
             </div>
           </button>
           <button id="no" className="no-button" onMouseEnter={hoverNo}>
-            <Image
-              src="/images/santa-hat.png"
-              width={383}
-              height={317}
-              alt="santa-hat"
-            />
+            <Image src={hat} width={383} height={317} alt="santa-hat" />
             <div>No</div>
           </button>
         </div>
@@ -243,12 +96,46 @@ export default function Home() {
     );
   }
 
+  function changeMess(event) {
+    if (count >= MESS.length) {
+      setCount(0);
+      setCurrentMess("");
+      setMess("");
+      return;
+    }
+    let text = currentMess + MESS[count];
+    setCurrentMess(text);
+    setMess(text);
+    setCount(count + 1);
+  }
+
+  function renderMessage() {
+    return (
+      <div className="modal">
+        <div className="message">
+          <Image
+            src={messageB}
+            width={225}
+            height={150}
+            alt="message-background"
+          />
+          <div className="content">
+            <div></div>
+            <input type="text" value={mess} onInput={changeMess} />
+            <button>GỬI</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
+      {renderMessage()}
       {renderLetter()}
       <div className={"page"}>
         <Image
-          src="/images/background.jpg"
+          src={background_img}
           width={2560}
           height={1440}
           alt="background"

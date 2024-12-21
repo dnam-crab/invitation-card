@@ -24,7 +24,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url("../assets/fonts/AnonymousPro-Regular.ttf");
+}
+
 * {
+  font-family: "Anonymous Pro", monospace;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -723,4 +729,65 @@ main > h1 {
   to {
     border-right-color: transparent;
   }
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  background: #ffffff30;
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  width: 60%;
+  height: 50%;
+  transform: translate(0, -20%);
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 15px;
+
+  > img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
+}
+
+.content {
+  width: 53%;
+  height: 100%;
+  padding: 100px 0;
+  z-index: 7;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.content > input[type="text"] {
+  width: 70%;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 22px;
+}
+
+.content > button {
+  width: 70px;
+  height: 36px;
+  font-size: 22px;
+  border-radius: 6px;
 }
